@@ -1,0 +1,78 @@
+
+/* site.css */
+
+
+/* Site Stuff */
+
+ul.horizontal {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.flex > * {
+    max-width: 30%;
+    max-height: 30%;
+}
+
+img {
+    max-width: 50%;
+    max-height: 50%;
+    margin-bottom: 100px;
+    margin-left: 150px;
+    /*margin-bottom: 100px;
+    margin-left: 50px;
+    margin-right: 150px;
+    */
+}
+
+/* Navbar Stuff */
+
+#Navbar {
+    background-color: black;
+
+}
+
+#Navbar li {
+    display: inline;
+    background-color: black;
+    text-align: center;   
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 16px;
+    padding-right: 16px;
+    float: left;
+    text-decoration: none;
+}
+
+#Navbar li > a {
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+#Navbar li.active{
+    background-color: rebeccapurple;
+}
+
+/* Table stuff */
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    white-space: nowrap;
+}
