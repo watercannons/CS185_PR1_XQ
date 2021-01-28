@@ -36,7 +36,8 @@
             let overlayVid = document.createElement("video");
             overlayVid.setAttribute("src", x.getAttribute("src"));
             overlayVid.setAttribute("controls", "true");
-            overlayVid.style.width = "90vmin";
+            overlayVid.style.maxWidth = "75%";
+            overlayVid.style.maxHeight = "75%";
             overlayVid.style.opacity = "1";
             overlayVid.style.zIndex = "10000";
             overlayVid.style.margin = "auto";
