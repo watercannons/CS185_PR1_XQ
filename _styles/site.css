@@ -38,6 +38,17 @@ ul.horizontal {
     margin: 0 !important;
 }
 
+/* Button stuff */
+.scrollToTop{
+    display:none;
+    position:fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: rebeccapurple;
+    color: seashell;
+    cursor: pointer;
+}
+
 /* Navbar Stuff */
 
 #Navbar {

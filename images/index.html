@@ -17,6 +17,7 @@
             <li><a href="../table/">Table</a></li>
         </ul>
 
+        <button id="topButton" class="scrollTop">Back To Top</button>
 
         <div class="flex pictures">
             <div class="picdiv"><img src="/_media/a.jpg" alt="a"></div>
@@ -29,3 +30,17 @@
     </body>
 </html>
 
+<script>
+    document.querySelector("body").onscroll = function(){
+        if(window.scrollY / document.body.offsetHeight > 0.25){
+            document.getElementById("topButton").style.display = "block";
+        }
+        else{
+            document.getElementById("topButton").onclick = function(){}
+        }
+    }
+
+    document.getElementById("scrollButon").onclick = function(){
+        window.scroll(0,0);
+    }
+</script>
