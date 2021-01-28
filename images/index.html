@@ -11,36 +11,102 @@
 
     <body>
         <ul id="Navbar" class="horizontal">
-            <li><a href="../text/">Text</a></li>
+            <li class="inactive"><a href="../text/">Text</a></li>
             <li class="active"><a href=".">Image</a></li>
-            <li><a href="../videos/">Video</a></li>
-            <li><a href="../table/">Table</a></li>
+            <li class="inactive"><a href="../videos/">Video</a></li>
+            <li class="inactive"><a href="../table/">Table</a></li>
+            <li class="inactive"><a href="../email/">Email</a></li>
         </ul>
 
-        <button id="topButton" class="scrollTop">Back To Top</button>
+        <button id="topButton" class="scrollToTop">Back To Top</button>
 
         <div class="flex pictures">
-            <div class="picdiv"><img src="/_media/a.jpg" alt="a"></div>
-            <div class="picdiv"><img src="/_media/b.jpg" alt="b"></div>
-            <div class="picdiv"><img src="/_media/c.jpg" alt="c"></div>
-            <div class="picdiv"><img src="/_media/d.jpg" alt="d"></div>
-            <div class="picdiv"><img src="/_media/e.jpg" alt="e"></div>
-            <div class="picdiv"><img src="/_media/f.jpg" alt="f"></div>
+            <div class="picdiv"><img src="/_media/a.jpg" id="a" class="p"></div>
+            <div class="picdiv"><img src="/_media/b.jpg" id="b" class="p"></div>
+            <div class="picdiv"><img src="/_media/c.jpg" id="c" class="p"></div>
+            <div class="picdiv"><img src="/_media/d.jpg" id="d" class="p"></div>
+            <div class="picdiv"><img src="/_media/e.jpg" id="e" class="p"></div>
+            <div class="picdiv"><img src="/_media/f.jpg" id="f" class="p"></div>
+            <div class="picdiv"><img src="/_media/g.jpg" id="g" class="p"></div>
+            <div class="picdiv"><img src="/_media/h.jpg" id="h" class="p"></div>
+            <div class="picdiv"><img src="/_media/i.jpg" id="i" class="p"></div>
+            <div class="picdiv"><img src="/_media/j.jpg" id="j" class="p"></div>
+            <div class="picdiv"><img src="/_media/k.jpg" id="k" class="p"></div>
+            <div class="picdiv"><img src="/_media/l.jpg" id="l" class="p"></div>
+            <div class="picdiv"><img src="/_media/m.jpg" id="m" class="p"></div>
+            <div class="picdiv"><img src="/_media/n.jpg" id="n" class="p"></div>
+            <div class="picdiv"><img src="/_media/o.jpg" id="o" class="p"></div>
+            <div class="picdiv"><img src="/_media/p.jpg" id="p" class="p"></div>
+            <div class="picdiv"><img src="/_media/q.jpg" id="q" class="p"></div>
+            <div class="picdiv"><img src="/_media/r.jpg" id="r" class="p"></div>
+            <div class="picdiv"><img src="/_media/s.jpg" id="s" class="p"></div>
+            <div class="picdiv"><img src="/_media/t.jpg" id="t" class="p"></div>
+            <div class="picdiv"><img src="/_media/u.jpg" id="u" class="p"></div>
+            <div class="picdiv"><img src="/_media/v.jpg" id="v" class="p"></div>
+            <div class="picdiv"><img src="/_media/w.jpg" id="w" class="p"></div>
+            <div class="picdiv"><img src="/_media/x.jpg" id="x" class="p"></div>
+            <div class="picdiv"><img src="/_media/y.jpg" id="y" class="p"></div>
+            <div class="picdiv"><img src="/_media/z.jpg" id="z" class="p"></div>
         </div>
     </body>
 </html>
 
+
 <script>
+
+    let piclistAll = Array.from(document.querySelectorAll(".p"));
+
     document.querySelector("body").onscroll = function(){
-        if(window.scrollY / document.body.offsetHeight > 0.25){
+        if(window.scrollY / document.body.offsetHeight > 0.25)
             document.getElementById("topButton").style.display = "block";
-        }
-        else{
-            document.getElementById("topButton").onclick = function(){}
-        }
+        else
+            document.getElementById("topButton").style.display = "none";
     }
 
-    document.getElementById("scrollButon").onclick = function(){
+    document.getElementById("topButton").onclick = function(){
         window.scroll(0,0);
+    
     }
+
+    piclistAll.forEach(x => {
+            x.onclick = function(){
+
+                let flex = document.querySelector(".flex")
+                let overlayImage = document.createElement("img")
+                let overlay = document.createElement("div")
+
+                overlayImage.setAttribute("src", x.getAttribute("src"))
+                overlayImage.style.maxWidth = "80%"
+                overlayImage.style.maxHeight = "80%"
+                overlayImage.style.opacity = "1"
+                overlayImage.style.zIndex = "10000"
+                overlayImage.style.margin = "auto"
+                overlayImage.style.position = "fixed"
+                overlayImage.style.top = "50vh"
+                overlayImage.style.left = "50vw"
+                overlayImage.style.transform = "translate( -50%, -50% )"
+
+                overlay.style.position = "fixed"
+                overlay.style.display = "flex"
+                overlay.style.alignItems = "center"
+                overlay.style.justifyContent = "center"
+                overlay.style.top = "0"
+                overlay.style.left = "0"
+                overlay.style.width = "100%"
+                overlay.style.height = "100%"
+                overlay.style.backgroundColor = "#000000"
+                overlay.style.opacity = "0"
+
+                overlay.onclick = function() {
+                    flex.removeChild(overlayImage)
+                    flex.removeChild(overlay)
+                }
+
+                
+                flex.appendChild(overlay)
+                flex.appendChild(overlayImage)
+            }
+        })
+    
+    
 </script>

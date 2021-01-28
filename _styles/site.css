@@ -12,22 +12,29 @@ ul.horizontal {
     overflow: hidden;
 }
 
+/* flex/image Stuff */
+
 .flex {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 50px;
 }
+
 .flex > * {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.picdiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     max-width: 21%;
     max-height: 21%;
 }
-.picdiv {
-    margin-bottom: 3rem;
-}
+
 .pictures {
-    max-width: 1300px;
     margin: 3rem auto;
 }
 
@@ -36,6 +43,14 @@ ul.horizontal {
     max-width: 100% !important;
     max-height: 100% !important;
     margin: 0 !important;
+}
+
+.toGray{
+    filter: grayscale(100%);
+}
+
+.fromGray{
+    filter: grayscale(0%);
 }
 
 /* Button stuff */
@@ -76,6 +91,10 @@ ul.horizontal {
 
 #Navbar li.active{
     background-color: rebeccapurple;
+}
+
+#Navbar li.inactive:hover{
+    background-color: cadetblue;
 }
 
 /* Table stuff */

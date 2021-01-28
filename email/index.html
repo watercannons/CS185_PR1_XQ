@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Email</title>
+
+        <link rel="stylesheet" href="/_styles/site.css">
+    </head>
+
+    <body>
+        <ul id="Navbar" class="horizontal">
+            <li class="inactive"><a href="../text/">Text</a></li>
+            <li class="inactive"><a href="../images/">Image</a></li>
+            <li class="inactive"><a href="../videos/">Video</a></li>
+            <li class="inactive"><a href="../table/">Table</a></li>
+            <li class="active"><a href="../email/">Email</a></li>
+        </ul>
+
+        <h2></h2>
+        <label>Enter Email Address:</label><br>
+        <input type="text" id="emailAddrBox" name="addrBox"><br>
+        <p id="displayValidationMessage"></p>
+        <h2></h2>
+        <button id="clickValidate">Validate Email</button>
+    </body>
+</html>
+
+<style>
+    #displayValidationMessage{
+        opacity: 0;
+    }
+</style>
+
+
+<script>
+    document.getElementById("clickValidate").addEventListener("click", submitEmail, false);
+
+    function submitEmail(){
+        console.log("clicked")
+
+        let input = document.getElementById("emailAddrBox").value.toString();
+        let validFormat = true;
+
+        if(input.indexOf('@') < 0)
+            validFormat = false;
+        else if(input.length < 4)
+            validFormat = false;
+        else if(input.substring(input.length-4) != ".edu" && input.substring(input.length-4) != ".com")
+            validFormat = false;
+        
+        if(validFormat){
+            document.getElementById("displayValidationMessage").innerHTML = "Email successfully recorded";
+        }
+        else{
+            document.getElementById("displayValidationMessage").innerHTML = "Invalid email address";
+        }
+        
+        document.getElementById("displayValidationMessage").style.opacity = 1;
+
+    }
+</script>
