@@ -19,10 +19,52 @@
         </ul>
 
         <div class="flex videos">
-            <iframe class="vid" width="560" height="315" src="https://www.youtube.com/embed/skWWN8rHqQ4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe class="vid" width="560" height="315" src="https://www.youtube.com/embed/F8UT8bwXRG0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe class="vid" width="560" height="315" src="https://www.youtube.com/embed/XDuTPhTCWeg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="picdiv"><video src="/_media/cat1.mp4"></video></div>
+            <div class="picdiv"><video src="/_media/cat2.mp4"></video></video></div>
+            <div class="picdiv"><video src="/_media/cat3.mp4"></video></div>
+            <div class="picdiv"><video src="/_media/catquestionmark.mp4"></video></div>
         </div>
     </body>
 </html>
+
+<script>
+    Array.from(document.querySelectorAll("video")).forEach(x => {
+        x.onclick = function () {
+            
+            let flex = document.querySelector(".flex");
+            let overlay = document.createElement("div");
+            let overlayVid = document.createElement("video");
+            overlayVid.setAttribute("src", x.getAttribute("src"));
+            overlayVid.setAttribute("controls", "true");
+            overlayVid.style.width = "90vmin";
+            overlayVid.style.opacity = "1";
+            overlayVid.style.zIndex = "10000";
+            overlayVid.style.margin = "auto";
+            overlayVid.style.position = "fixed";
+            overlayVid.style.top = "50vh";
+            overlayVid.style.left = "50vw";
+            overlayVid.style.transform = "translate( -50%, -50% )";
+
+            overlay.style.position = "fixed";
+            overlay.style.display = "flex";
+            overlay.style.alignItems = "center";
+            overlay.style.justifyContent = "center";
+            overlay.style.top = "0";
+            overlay.style.left = "0";
+            overlay.style.width = "100%";
+            overlay.style.height = "100%";
+            overlay.style.opacity = "0";
+
+            flex.appendChild(overlay);
+            flex.appendChild(overlayVid);
+
+            overlay.onclick = function () {
+                flex.removeChild(overlay);
+                flex.removeChild(overlayVid);
+            }
+
+        }
+        
+    })
+</script>
 

@@ -71,40 +71,39 @@
     piclistAll.forEach(x => {
             x.onclick = function(){
 
-                let flex = document.querySelector(".flex")
-                let overlayImage = document.createElement("img")
-                let overlay = document.createElement("div")
+                let flex = document.querySelector(".flex");
+                let overlayImage = document.createElement("img");
+                let overlay = document.createElement("div");
 
-                overlayImage.setAttribute("src", x.getAttribute("src"))
-                overlayImage.style.maxWidth = "80%"
-                overlayImage.style.maxHeight = "80%"
-                overlayImage.style.opacity = "1"
-                overlayImage.style.zIndex = "10000"
-                overlayImage.style.margin = "auto"
-                overlayImage.style.position = "fixed"
-                overlayImage.style.top = "50vh"
-                overlayImage.style.left = "50vw"
-                overlayImage.style.transform = "translate( -50%, -50% )"
+                overlayImage.setAttribute("src", x.getAttribute("src"));
+                overlayImage.style.maxWidth = "75%%";
+                overlayImage.style.maxHeight = "75%";
+                overlayImage.style.opacity = "1";
+                overlayImage.style.zIndex = "10000";
+                overlayImage.style.margin = "auto";
+                overlayImage.style.position = "fixed";
+                overlayImage.style.top = "50vh";
+                overlayImage.style.left = "50vw";
+                overlayImage.style.transform = "translate( -50%, -50% )";
 
-                overlay.style.position = "fixed"
-                overlay.style.display = "flex"
-                overlay.style.alignItems = "center"
-                overlay.style.justifyContent = "center"
-                overlay.style.top = "0"
-                overlay.style.left = "0"
-                overlay.style.width = "100%"
-                overlay.style.height = "100%"
-                overlay.style.backgroundColor = "#000000"
-                overlay.style.opacity = "0"
+                overlay.style.position = "fixed";
+                overlay.style.display = "flex";
+                overlay.style.alignItems = "center";
+                overlay.style.justifyContent = "center";
+                overlay.style.top = "0";
+                overlay.style.left = "0";
+                overlay.style.width = "100%";
+                overlay.style.height = "100%";
+                overlay.style.opacity = "0";
 
                 overlay.onclick = function() {
-                    flex.removeChild(overlayImage)
-                    flex.removeChild(overlay)
+                    flex.removeChild(overlayImage);
+                    flex.removeChild(overlay);
                 }
 
                 
-                flex.appendChild(overlay)
-                flex.appendChild(overlayImage)
+                flex.appendChild(overlay);
+                flex.appendChild(overlayImage);
             }
         })
     

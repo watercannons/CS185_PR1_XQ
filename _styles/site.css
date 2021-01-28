@@ -45,6 +45,12 @@ ul.horizontal {
     margin: 0 !important;
 }
 
+.picdiv video{
+    max-width: 100% !important;
+    max-height: 100% !important;
+    margin: 0 !important;
+}
+
 .toGray{
     filter: grayscale(100%);
 }
